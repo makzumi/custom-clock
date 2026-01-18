@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="use24Hour" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="showDate" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="timeFontFamily" type="String">
+      <default>Sans Serif</default>
+    </entry>
+    <entry name="timeFontSize" type="Int">
+      <default>48</default>
+    </entry>
+    <entry name="timeFontBold" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="timeFontItalic" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="timeColor" type="String">
+      <default>#ffffff</default>
+    </entry>
+    <entry name="dateFontFamily" type="String">
+      <default>Sans Serif</default>
+    </entry>
+    <entry name="dateFontSize" type="Int">
+      <default>20</default>
+    </entry>
+    <entry name="dateFontBold" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="dateFontItalic" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="dateColor" type="String">
+      <default>#ffffff</default>
+    </entry>
+    <entry name="textAlignment" type="Int">
+      <default>1</default>
+    </entry>
+    <entry name="dropShadow" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="shadowColor" type="String">
+      <default>#000000</default>
+    </entry>
+  </group>
+</kcfg>

@@ -1,0 +1,18 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "makzumi"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "Customizable clock widget",
+        "Icon": "preferences-system-time",
+        "Id": "com.makzumi.clock",
+        "Name": "Customizable Clock",
+        "Version": "1.0",
+        "Website": ""
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
