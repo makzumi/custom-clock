@@ -42,6 +42,15 @@
     <entry name="dateColor" type="String">
       <default>#ffffff</default>
     </entry>
+    <entry name="uppercaseDate" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="uppercaseTime" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="useShortDate" type="Bool">
+      <default>false</default>
+    </entry>
     <entry name="textAlignment" type="Int">
       <default>1</default>
     </entry>

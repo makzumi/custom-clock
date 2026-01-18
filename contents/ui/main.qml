@@ -10,7 +10,7 @@ PlasmoidItem {
     
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
     
-    property string timeFormat: plasmoid.configuration.use24Hour ? "H:mm" : "h:mm AP"
+    property string timeFormat: plasmoid.configuration.use24Hour ? "H:mm" : (plasmoid.configuration.uppercaseTime ? "h:mm AP" : "h:mm ap")
     property string dateFormat: plasmoid.configuration.useShortDate ? "M/d/yyyy" : "dddd, MMMM d, yyyy"
     
     width: Kirigami.Units.gridUnit * 10
@@ -28,8 +28,13 @@ PlasmoidItem {
             
             Text {
                 id: timeText
-                Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.alignment: {
+                    var align = plasmoid.configuration.textAlignment
+                    if (align === 0) return Qt.AlignLeft | Qt.AlignVCenter
+                    if (align === 2) return Qt.AlignRight | Qt.AlignVCenter
+                    return Qt.AlignHCenter | Qt.AlignVCenter
+                }
                 text: root.currentTime
                 
                 font.family: plasmoid.configuration.timeFontFamily || "Sans Serif"
@@ -37,16 +42,6 @@ PlasmoidItem {
                 font.italic: plasmoid.configuration.timeFontItalic || false
                 
                 color: plasmoid.configuration.timeColor || Kirigami.Theme.textColor
-                
-                horizontalAlignment: {
-                    var align = plasmoid.configuration.textAlignment || 1
-                    switch(align) {
-                        case 0: return Text.AlignLeft
-                        case 1: return Text.AlignHCenter
-                        case 2: return Text.AlignRight
-                        default: return Text.AlignHCenter
-                    }
-                }
                 
                 layer.enabled: plasmoid.configuration.dropShadow || false
                 layer.effect: DropShadow {
@@ -59,9 +54,13 @@ PlasmoidItem {
             Text {
                 id: dateText
                 visible: plasmoid.configuration.showDate !== false
-                Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.topMargin: 0
+                Layout.alignment: {
+                    var align = plasmoid.configuration.textAlignment
+                    if (align === 0) return Qt.AlignLeft | Qt.AlignVCenter
+                    if (align === 2) return Qt.AlignRight | Qt.AlignVCenter
+                    return Qt.AlignHCenter | Qt.AlignVCenter
+                }
                 text: root.currentDate
                 
                 font.family: plasmoid.configuration.dateFontFamily || "Sans Serif"
@@ -69,16 +68,6 @@ PlasmoidItem {
                 font.italic: plasmoid.configuration.dateFontItalic || false
                 
                 color: plasmoid.configuration.dateColor || Kirigami.Theme.textColor
-                
-                horizontalAlignment: {
-                    var align = plasmoid.configuration.textAlignment || 1
-                    switch(align) {
-                        case 0: return Text.AlignLeft
-                        case 1: return Text.AlignHCenter
-                        case 2: return Text.AlignRight
-                        default: return Text.AlignHCenter
-                    }
-                }
                 
                 layer.enabled: plasmoid.configuration.dropShadow || false
                 layer.effect: DropShadow {

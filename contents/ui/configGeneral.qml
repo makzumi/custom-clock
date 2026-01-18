@@ -12,6 +12,7 @@ ScrollView {
     property string cfg_timeFontFamily
     property alias cfg_timeFontSize: timeFontSize.value
     property alias cfg_timeFontItalic: timeFontItalic.checked
+    property alias cfg_uppercaseTime: uppercaseTime.checked
     property string cfg_dateFontFamily
     property alias cfg_dateFontSize: dateFontSize.value
     property alias cfg_dateFontItalic: dateFontItalic.checked
@@ -74,6 +75,12 @@ ScrollView {
         id: timeFontItalic
         Kirigami.FormData.label: "Font Style:"
         text: "Italic"
+    }
+    
+    CheckBox {
+        id: uppercaseTime
+        text: "Uppercase AM/PM"
+        enabled: !use24Hour.checked
     }
     
     RowLayout {
