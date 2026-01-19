@@ -70,7 +70,7 @@ import sys
 
 def should_exclude(filename):
     """Check if file should be excluded from package"""
-    excludes = ['.git', '~', '.sh', 'readme.md', '.plasmoid']
+    excludes = ['.git', '~', '.sh', 'readme.md', '.plasmoid', 'build']
     return any(ex in filename for ex in excludes)
 
 def add_to_zip(zipf, path, arcname):
